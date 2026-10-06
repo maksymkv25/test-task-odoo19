@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Components -->
+    <record id="product_component_1" model="product.product">
+        <field name="name">Компонент 1</field>
+        <field name="default_code">COMP-1</field>
+        <field name="type">consu</field>
+        <field name="is_storable" eval="True"/>
+    </record>
+
+    <record id="product_component_2" model="product.product">
+        <field name="name">Компонент 2</field>
+        <field name="default_code">COMP-2</field>
+        <field name="type">consu</field>
+        <field name="is_storable" eval="True"/>
+    </record>
+
+    <record id="product_component_3" model="product.product">
+        <field name="name">Компонент 3</field>
+        <field name="default_code">COMP-3</field>
+        <field name="type">consu</field>
+        <field name="is_storable" eval="True"/>
+    </record>
+
+    <record id="product_component_4" model="product.product">
+        <field name="name">Компонент 4</field>
+        <field name="default_code">COMP-4</field>
+        <field name="type">consu</field>
+        <field name="is_storable" eval="True"/>
+    </record>
+
+    <!-- Finished product, so a manufacturing order can be run end to end -->
+    <record id="product_finished_1" model="product.product">
+        <field name="name">Виріб 1</field>
+        <field name="default_code">PROD-1</field>
+        <field name="type">consu</field>
+        <field name="is_storable" eval="True"/>
+    </record>
+
+    <record id="bom_product_1" model="mrp.bom">
+        <field name="product_tmpl_id" ref="product_finished_1_product_template"/>
+        <field name="product_qty">1</field>
+        <field name="type">normal</field>
+    </record>
+
+    <record id="bom_line_product_1_component_1" model="mrp.bom.line">
+        <field name="bom_id" ref="bom_product_1"/>
+        <field name="product_id" ref="product_component_1"/>
+        <field name="product_qty">1</field>
+    </record>
+
+    <record id="bom_line_product_1_component_2" model="mrp.bom.line">
+        <field name="bom_id" ref="bom_product_1"/>
+        <field name="product_id" ref="product_component_2"/>
+        <field name="product_qty">2</field>
+    </record>
+</odoo>

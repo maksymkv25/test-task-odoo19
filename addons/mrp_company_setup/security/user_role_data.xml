@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Shop manager: views stock levels (Inventory / User) and processes MOs (Manufacturing / User) -->
+    <record id="role_shop_manager" model="res.users.role">
+        <field name="name">Керівник цеху</field>
+        <field name="implied_ids" eval="[Command.link(ref('stock.group_stock_user')), Command.link(ref('mrp.group_mrp_user'))]"/>
+    </record>
+
+    <record id="user_shop_manager" model="res.users">
+        <field name="name">Керівник цеху</field>
+        <field name="login">shop_manager</field>
+        <field name="password">shop_manager</field>
+        <field name="role_line_ids" eval="[Command.create({'role_id': ref('role_shop_manager')})]"/>
+    </record>
+</odoo>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="mrp_company_setup.role_shop_manager" model="res.users.role">
+        <field name="warehouse_ids" eval="[Command.set([ref('mrp_company_setup.warehouse_k1')])]"/>
+    </record>
+</odoo>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="warehouse_k1" model="stock.warehouse">
+        <field name="name">Склад К1</field>
+        <field name="code">K1</field>
+    </record>
+
+    <record id="warehouse_k2" model="stock.warehouse">
+        <field name="name">Склад К2</field>
+        <field name="code">K2</field>
+    </record>
+</odoo>
